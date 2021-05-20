@@ -26,6 +26,12 @@ class TransformOptions
      */
     private $absentMode = Field::ABSENT_VALUE_USE_DEFAULT;
 
+
+    /**
+     * @var bool
+     */
+    private $disableObjectSettersIfNull = false;
+
     /**
      * @return bool
      */
@@ -72,6 +78,22 @@ class TransformOptions
     public function setAbsentMode(string $absentMode)
     {
         $this->absentMode = $absentMode;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isDisableObjectSettersIfNull(): bool
+    {
+        return $this->disableObjectSettersIfNull;
+    }
+
+    /**
+     * @param bool $disableObjectSettersIfNull
+     */
+    public function setDisableObjectSettersIfNull(bool $disableObjectSettersIfNull)
+    {
+        $this->disableObjectSettersIfNull = $disableObjectSettersIfNull;
     }
 
 }

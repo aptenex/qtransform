@@ -5,7 +5,6 @@
     "license": "proprietary",
     "autoload": {
         "psr-4": {
-            "": "src/",
             "Aptenex\\QTransform\\" : "src/"
         }
     },

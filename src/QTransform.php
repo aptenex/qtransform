@@ -94,7 +94,11 @@ class QTransform
         foreach ($arrayData as $key => $value) {
             $setter = sprintf('set%s', ucfirst($key));
             if (method_exists($object, $setter)) {
-                $object->$setter($value);
+                if ($options !== null && $options->isDisableObjectSettersIfNull() && $value !== null) {
+                    $object->$setter($value);
+                } else {
+                    $object->$setter($value);
+                }
             }
         }
     }
